@@ -1,0 +1,323 @@
+paths:
+  /CustomerSurveyProcedure/Initiate:
+    post:
+      tags:
+        - CR (DDD Aggregate) - CustomerSurveyProcedure
+      summary: (DDD Service) InCR Initiate customer survey processing
+      description: (DDD Service) InCR Initiate customer survey processing
+      operationId: CustomerSurveyProcedure/Initiate
+      requestBody:
+        $ref: '#/components/requestBodies/InitiateCustomerSurveyProcedureRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/InitiateCustomerSurveyProcedureResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /CustomerSurveyProcedure/{procedureId}/Definition/Retrieve:
+    get:
+      tags:
+        - BQ (DDD Aggregate) - Definition
+      summary: >-
+        (DDD Service) ReBQ Retrieve details about customer survey related
+        activity
+      description: >-
+        (DDD Service) ReBQ Retrieve details about customer survey related
+        activity
+      operationId: Definition/Retrieve
+      parameters:
+        - $ref: '#/components/parameters/procedureId'
+      responses:
+        '200':
+          $ref: '#/components/responses/RetrieveDefinitionResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /CustomerSurveyProcedure/{procedureId}/Definition/Update:
+    put:
+      tags:
+        - BQ (DDD Aggregate) - Definition
+      summary: >-
+        (DDD Service) UpBQ Update aspects of a customer survey
+        definition/specification
+      description: >-
+        (DDD Service) UpBQ Update aspects of a customer survey
+        definition/specification
+      operationId: Definition/Update
+      parameters:
+        - $ref: '#/components/parameters/procedureId'
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateDefinitionRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/UpdateDefinitionResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /CustomerSurveyProcedure/{procedureId}/Execution/Retrieve:
+    get:
+      tags:
+        - BQ (DDD Aggregate) - Execution
+      summary: >-
+        (DDD Service) ReBQ Retrieve details about customer survey execution
+        activity
+      description: >-
+        (DDD Service) ReBQ Retrieve details about customer survey execution
+        activity
+      operationId: Execution/Retrieve
+      parameters:
+        - $ref: '#/components/parameters/procedureId'
+      responses:
+        '200':
+          $ref: '#/components/responses/RetrieveExecutionResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /CustomerSurveyProcedure/{procedureId}/Execution/Update:
+    put:
+      tags:
+        - BQ (DDD Aggregate) - Execution
+      summary: (DDD Service) UpBQ Update details of a survey execution task
+      description: (DDD Service) UpBQ Update details of a survey execution task
+      operationId: Execution/Update
+      parameters:
+        - $ref: '#/components/parameters/procedureId'
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateExecutionRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/UpdateExecutionResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /CustomerSurveyProcedure/{procedureId}/ParticipantSelection/Retrieve:
+    get:
+      tags:
+        - BQ (DDD Aggregate) - ParticipantSelection
+      summary: >-
+        (DDD Service) ReBQ Retrieve details about survey Participant selection
+        activity
+      description: >-
+        (DDD Service) ReBQ Retrieve details about survey Participant selection
+        activity
+      operationId: ParticipantSelection/Retrieve
+      parameters:
+        - $ref: '#/components/parameters/procedureId'
+      responses:
+        '200':
+          $ref: '#/components/responses/RetrieveParticipantSelectionResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /CustomerSurveyProcedure/{procedureId}/ParticipantSelection/Update:
+    put:
+      tags:
+        - BQ (DDD Aggregate) - ParticipantSelection
+      summary: (DDD Service) UpBQ Update Participant selection details
+      description: (DDD Service) UpBQ Update Participant selection details
+      operationId: ParticipantSelection/Update
+      parameters:
+        - $ref: '#/components/parameters/procedureId'
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateParticipantSelectionRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/UpdateParticipantSelectionResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /CustomerSurveyProcedure/{procedureId}/Retrieve:
+    get:
+      tags:
+        - CR (DDD Aggregate) - CustomerSurveyProcedure
+      summary: (DDD Service) ReCR Retrieve details about a customer survey process
+      description: (DDD Service) ReCR Retrieve details about a customer survey process
+      operationId: CustomerSurveyProcedure/Retrieve
+      parameters:
+        - $ref: '#/components/parameters/procedureId'
+      responses:
+        '200':
+          $ref: '#/components/responses/RetrieveCustomerSurveyProcedureResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /CustomerSurveyProcedure/{procedureId}/SurveyAnalysis/Retrieve:
+    get:
+      tags:
+        - BQ (DDD Aggregate) - SurveyAnalysis
+      summary: (DDD Service) ReBQ Retrieve details about a customer survey analysis
+      description: (DDD Service) ReBQ Retrieve details about a customer survey analysis
+      operationId: SurveyAnalysis/Retrieve
+      parameters:
+        - $ref: '#/components/parameters/procedureId'
+      responses:
+        '200':
+          $ref: '#/components/responses/RetrieveSurveyAnalysisResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /CustomerSurveyProcedure/{procedureId}/SurveyAnalysis/Update:
+    put:
+      tags:
+        - BQ (DDD Aggregate) - SurveyAnalysis
+      summary: (DDD Service) UpBQ Update details about customer survey analysis
+      description: (DDD Service) UpBQ Update details about customer survey analysis
+      operationId: SurveyAnalysis/Update
+      parameters:
+        - $ref: '#/components/parameters/procedureId'
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateSurveyAnalysisRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/UpdateSurveyAnalysisResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /CustomerSurveyProcedure/{procedureId}/Update:
+    put:
+      tags:
+        - CR (DDD Aggregate) - CustomerSurveyProcedure
+      summary: (DDD Service) UpCR Update details of an active customer survey process
+      description: (DDD Service) UpCR Update details of an active customer survey process
+      operationId: CustomerSurveyProcedure/Update
+      parameters:
+        - $ref: '#/components/parameters/procedureId'
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateCustomerSurveyProcedureRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/UpdateCustomerSurveyProcedureResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /CustomerSurveyProcedure/Retrieve:
+    get:
+      tags:
+        - CR (DDD Aggregate) - CustomerSurveyProcedure
+      summary: >-
+        (DDD Service) ReCR Retrieve/Search existing customer survey processes
+        based on search criteria; added to aid BIAN Coreless v4 implementation
+      description: >-
+        (DDD Service) ReCR Retrieve/Search existing customer survey processes
+        based on search criteria
+      operationId: CustomerSurveyProcedure/Retrieve2
+      parameters:
+        - in: query
+          name: searchCriteria
+          schema:
+            type: string
+          description: Search criteria as key-value pairs
+      responses:
+        '200':
+          $ref: '#/components/responses/RetrieveCustomerSurveyProcedureResponse2'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
